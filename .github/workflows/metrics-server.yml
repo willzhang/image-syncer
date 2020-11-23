@@ -1,0 +1,31 @@
+name: pull metrics-server docker image
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  DOCKERHUB_USERNAME: willdockerhub
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: google/cloud-sdk:alpine
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: glcoud auth
+        run: |
+          gcloud auth activate-service-account --key-file /root/willcloud-4495989b989b.json
+          metrics_tag=`gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server --format="table(TAGS)" --filter="tags:*" | grep -v TAGS`
+          for TAG in $metrics_tag;
+          do
+		        docker pull k8s.gcr.io/metrics-server/metrics-server:$TAG
+            docker tag k8s.gcr.io/metrics-server/metrics-server:$TAG $DOCKERHUB_USERNAME/metrics-server:$TAG
+            docker push $DOCKERHUB_USERNAME/metrics-server:$TAG
+          done;
