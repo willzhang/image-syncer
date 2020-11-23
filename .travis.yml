@@ -24,17 +24,12 @@ install:
 
 script:
   - |
-    echo "start pull retag and push"
-    count=$(cat metrics-server-tags.list | wc -l)
-    icount=1
-    for image in `cat images.txt`
+    for TAG in `cat metrics-server-tags.list`
     do
-      echo [$icount/$count]: $image
-      image_name=${image##*/}
-      docker pull $image
-      docker tag $image $DOCKERHUB_USERNAME/$image_name
-      docker push $DOCKERHUB_USERNAME/$image_name
-      ((icount++))
+      docker pull k8s.gcr.io/metrics-server/metrics-server:$TAG
+      docker tag k8s.gcr.io/metrics-server/metrics-server:$TAG $DOCKERHUB_USERNAME/metrics-server:$TAG
+      docker push $DOCKERHUB_USERNAME/metrics-server:$TAG
     done
+	
 after_script:
   - docker images --format "{{.Repository}}:{{.Tag}}" | grep $DOCKERHUB_USERNAME  
