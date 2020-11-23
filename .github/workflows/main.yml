@@ -1,48 +1,26 @@
-ci_1_9:
-    name: Elixir 1.9 CI
-    runs-on: ubuntu-latest
+name: pull metrics-server docker images
 
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 13 * * 1'
+
+env:
+  DOCKERHUB_USERNAME: willdockerhub
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
     container:
-      # alpine causes errors in the steps, the container exits immediately, apparently
-      image: elixir:1.9-slim
-      env:
-        MIX_ENV: test
+      image: google/cloud-sdk:alpine
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Display build environment
-        run: printenv
-      - name: Install dependencies
-        run: mix do local.hex --force, local.rebar --force, deps.get
-      - name: Compile code (warnings as errors)
-        run: mix compile --warnings-as-errors
-      - name: Check code formatting
-        run: mix format --check-formatted
-      - name: Run tests (with coverage)
-        run: mix test --cover
-      - name: Create docs
-        run: mix docs
-
-  ci_1_9_alpine:
-    name: Elixir 1.9 CI Alpine
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@master
-      - name: Display build environment
-        run: printenv
-      - name: Install dependencies, compile, check formatting, test and create docs
-        uses: docker://elixir:1.9-alpine
-        env:
-          MIX_ENV: test
-        with:
-          entrypoint: /bin/sh
-          args: |
-            -c "\
-            mix do local.hex --force, local.rebar --force, deps.get && \
-            mix compile --warnings-as-errors && \
-            mix format --check-formatted && \
-            mix test --cover && \
-            mix docs"
+      - uses: actions/checkout@v1
+      - name: glcoud auth
+        run: |
+          echo $GCLOUD_SDK_JSON > gcloud_sdk.json
