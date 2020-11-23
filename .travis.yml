@@ -30,6 +30,6 @@ script:
       docker tag k8s.gcr.io/metrics-server/metrics-server:$TAG $DOCKERHUB_USERNAME/metrics-server:$TAG
       docker push $DOCKERHUB_USERNAME/metrics-server:$TAG
     done
-	
+
 after_script:
   - docker images --format "{{.Repository}}:{{.Tag}}" | grep $DOCKERHUB_USERNAME  
