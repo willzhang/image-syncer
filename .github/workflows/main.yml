@@ -1,4 +1,4 @@
-name: pull metrics-server docker image
+name: metrics-server
 
 on:
   push:
