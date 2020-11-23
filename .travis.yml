@@ -1,0 +1,52 @@
+dist: bionic
+
+sudo: required
+
+language: shell
+
+services: 
+  - docker
+
+env:
+ global:
+   - CENTOS_VERSION=7.7.1908
+   - DOCKER_VERSION=19.03.12-3
+   - DOCKER_TAG=nginx
+   - DOCKERHUB_USERNAME=willdockerhub
+   - ALI_USERNAME=willzhmic@outlook.com
+   - ALI_REGISTRY_URL=registry.cn-shenzhen.aliyuncs.com
+   - ALI_REGISTRY_NAMESPACE=images_mirror   
+
+before_install:
+  - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
+  - echo "$ALI_PASSWORD" | docker login "$ALI_REGISTRY_URL" -u "$ALI_USERNAME" --password-stdin
+  - sudo apt-get -y install createrepo
+  - docker pull centos:${CENTOS_VERSION}
+   
+install: 
+>-
+  docker run -it --rm -v ${PWD}:/workspace google/cloud-sdk:alpine
+  bash -c
+  "gcloud auth activate-service-account --key-file gcloud_sdk.json \
+   && yum install -y https://repo.mysql.com//mysql80-community-release-el7-3.noarch.rpm \
+   && yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
+   && yum install -y yum-utils \
+   && yum-config-manager --disable mysql80-community \
+   && yum-config-manager --enable mysql57-community \
+   && curl -o /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/centos/docker-ce.repo \
+   && yum install -y --downloadonly --downloaddir=/rpms docker-ce-${DOCKER_VERSION}.el7.x86_64 docker-ce-cli-${DOCKER_VERSION}.el7.x86_64 containerd.io \
+   && yum install -y --downloadonly --downloaddir=/rpms docker-compose \
+   && yum install -y --downloadonly --downloaddir=/rpms vim wget chrony rsync jq git tcpdump nc net-tools perl unzip gcc yum-utils tree \
+   && yum install -y --downloadonly --downloaddir=/rpms nginx mysql-community-server java-11-openjdk-devel ansible nfs-utils keepalived haproxy \
+   && yum --enablerepo=remi install -y --downloadonly --downloaddir=/rpms redis zlib-devel openssl-devel libaio numactl \
+   && yum install -y --downloadonly --downloaddir=/rpms createrepo"
+
+before_script:
+  - sudo chmod -R a+w ${PWD}/rpms
+  - createrepo ${PWD}/rpms
+  - docker build -t $DOCKERHUB_USERNAME/yum-repo:$DOCKER_TAG .
+  - docker build -t $ALI_REGISTRY_URL/$ALI_REGISTRY_NAMESPACE/yum-repo:$DOCKER_TAG .
+
+script:
+  - docker push $DOCKERHUB_USERNAME/yum-repo:$DOCKER_TAG
+  - docker push $ALI_REGISTRY_URL/$ALI_REGISTRY_NAMESPACE/yum-repo:$DOCKER_TAG
