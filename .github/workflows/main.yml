@@ -1,0 +1,34 @@
+name: pull metrics-server docker images
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 13 * * 1'
+
+env:
+  DOCKERHUB_USERNAME: willdockerhub
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container:
+      image: google/cloud-sdk:alpine
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: glcoud auth
+        run: |
+          echo $GCLOUD_SDK_JSON > gcloud_sdk.json
+          gcloud auth activate-service-account --key-file gcloud_sdk.json
+          metrics_tag=`gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server --format="table(TAGS)" --filter="tags:*" | grep -v TAGS`
+          for TAG in $metrics_tag;
+          do
+            docker pull k8s.gcr.io/metrics-server/metrics-server:$TAG
+            docker tag k8s.gcr.io/metrics-server/metrics-server:$TAG $DOCKERHUB_USERNAME/metrics-server:$TAG
+            docker push $DOCKERHUB_USERNAME/metrics-server:$TAG
+          done;
