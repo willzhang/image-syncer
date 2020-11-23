@@ -7,8 +7,6 @@ on:
   pull_request:
     branches:
       - master
-  schedule:
-    - cron: '0 13 * * 1'
 
 env:
   DOCKERHUB_USERNAME: willdockerhub
