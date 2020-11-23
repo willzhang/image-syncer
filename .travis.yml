@@ -17,9 +17,9 @@ before_install:
    
 install: 
 >-
-  docker run -it --rm -v ${PWD}:/workspace google/cloud-sdk:alpine
+  docker run -it --rm -v ${PWD}:/workspace -w /workspace google/cloud-sdk:alpine
   bash -c
-  "gcloud auth activate-service-account --key-file /workspace/gcloud-sdk.json \
+  "gcloud auth activate-service-account --key-file gcloud-sdk.json \
    && gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server --format='table(TAGS)' --filter='tags:*' | grep -v TAGS > metrics-server-tags.list"
 
 script:
