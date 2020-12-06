@@ -1,0 +1,7 @@
+auth:
+  registry.hub.docker.com:
+    username: USERNAME
+    password: PASSWORD
+images:
+  k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
+  k8s.gcr.io/ingress-nginx/controller: willdockerhub/ingress-nginx_controller
