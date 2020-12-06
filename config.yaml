@@ -5,3 +5,5 @@ auth:
 images:
   k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
   k8s.gcr.io/ingress-nginx/controller: willdockerhub/ingress-nginx_controller
+  quay.io/kubernetes-ingress-controller/nginx-ingress-controller: willdockerhub/ingress-nginx_controller
+  k8s.gcr.io/git-sync/git-sync: willdockerhub/git-sync
