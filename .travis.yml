@@ -13,4 +13,4 @@ before_install:
   - tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
    
 script: 
-  - ./image-syncer --proc=6 --config=config.yaml --retries=3
+  - ./image-syncer --proc=20 --config=config.yaml --retries=3
