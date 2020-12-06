@@ -1,9 +1,9 @@
-# Metrics-server docker images
+# image-syncer
 
-Sync k8s.gcr.io/metrics-server/metrics-server docker images to dockerhub.
+Sync k8s.gcr.io docker images to dockerhub use [aliyun image-syncer](https://github.com/AliyunContainerService/image-syncer)
 
 
-Open [google cloudshell](https://console.cloud.google.com/cloudshell) and run:
+Get image tag, Open [google cloudshell](https://console.cloud.google.com/cloudshell) and run:
 
 ```
 gcloud container images list --repository=k8s.gcr.io/metrics-server
