@@ -18,6 +18,5 @@ before_install:
   - wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
   - tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
    
-install: 
-  - cat config.yaml
+script: 
   - ./image-syncer --proc=6 --config=config.yaml --retries=3
