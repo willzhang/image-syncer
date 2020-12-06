@@ -13,8 +13,8 @@ env:
    - image_syncer_version=v1.3.0
 
 before_install:
-  - sed -i "s#${DOCKERHUB_USERNAME}#USERNAME#g" config.yaml
-  #- sed -i "s#${DOCKERHUB_PASSWORD}#PASSWORD#g" config.yaml
+  - sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
+  - sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" config.yaml
   - wget https://github.com/AliyunContainerService/image-syncer/releases/download/${image_syncer_version}/image-syncer-${image_syncer_version}-linux-amd64.tar.gz
   - tar -zxf image-syncer-${image_syncer_version}-linux-amd64.tar.gz
    
