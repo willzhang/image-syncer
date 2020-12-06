@@ -3,6 +3,4 @@ auth:
     username: USERNAME
     password: PASSWORD
 images:
-  k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
-  k8s.gcr.io/ingress-nginx/controller: willdockerhub/ingress-nginx_controller
-  k8s.gcr.io/git-sync/git-sync: willdockerhub/git-sync
+  willdockerhub/ingress-nginx_controller: willdockerhub/ingress-nginx-controller
