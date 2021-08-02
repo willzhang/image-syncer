@@ -6,4 +6,4 @@ images:
   k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
   k8s.gcr.io/ingress-nginx/controller: willdockerhub/ingress-nginx-controller
   k8s.gcr.io/git-sync/git-sync: willdockerhub/git-sync
-  gcr.io/kaniko-project/executor: willdockerhub/kaniko-executor
+  "gcr.io/kaniko-project/executor:debug,latest": "willdockerhub/kaniko-executor"
