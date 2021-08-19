@@ -1,6 +1,6 @@
 ## image-syncer
 
-Sync k8s.gcr.io docker images to dockerhub use [aliyun image-syncer](https://github.com/AliyunContainerService/image-syncer)
+Sync k8s.gcr.io docker images to dockerhub use [aliyun image-syncer](https://github.com/AliyunContainerService/image-syncer) + githubAction
 
 
 If you want list repository or image tag, Open [google cloudshell](https://console.cloud.google.com/cloudshell) and run:
