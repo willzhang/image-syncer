@@ -18,12 +18,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: install image-sync
+    - name: install image-sync tool
       run: |
-        sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
-        sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" config.yaml
         wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
         tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+
+    - name: init config.yaml with env
+      run: |
+        curl -L https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-`uname -s`-`uname -m` -o envsubst && chmod +x ./envsubst
+        ./envsubst < config.yaml.tmpl > config.yaml
 
     - name: sync images
       run: |
