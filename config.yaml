@@ -1,6 +1,6 @@
 auth:
   registry.hub.docker.com:
-    username: USERNAME
-    password: PASSWORD
+    username: ${DOCKERHUB_USERNAME}
+    password: ${DOCKERHUB_PASSWORD}
 images:
   k8s.gcr.io/prometheus-adapter/prometheus-adapter: willdockerhub/prometheus-adapter
