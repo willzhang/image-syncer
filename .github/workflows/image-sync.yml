@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: image-sync
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOCKERHUB_USERNAME: willdockerhub
+  IMAGE_SYNCER_VERSION: v1.3.0
+
+jobs:
+  image-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: install image-sync
+      run: |
+        sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
+        sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" config.yaml
+        wget https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+        tar -zxf image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz
+
+    - name: sync images
+      run: |
+	    ./image-syncer --proc=20 --config=config.yaml --retries=3
