@@ -12,7 +12,7 @@ gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server
 
 ## Getting Started
 
-1、fork this repo ,then create your self secrets:
+1、fork this repo, then create your self secrets:
 ```
 Settings-->Secrets-->New Repository Secrets--> Add your DOCKERHUB_USERNAME and DOCKERHUB_PASSWORD key values.
 ```
