@@ -12,11 +12,12 @@ gcloud container images list-tags k8s.gcr.io/metrics-server/metrics-server
 
 ## Getting Started
 
-fork this repo ,then create your self secrets:
-
+1、fork this repo ,then create your self secrets:
+```
 Settings-->Secrets-->New Repository Secrets--> add DOCKERHUB_USERNAME,DOCKERHUB_PASSWORD
+```
 
-add registry you want to sync:
+2、add registry to `images:` that you want to sync:
 
 ```yaml
 auth:
