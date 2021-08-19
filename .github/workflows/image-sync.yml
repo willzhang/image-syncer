@@ -25,9 +25,8 @@ jobs:
 
     - name: init config.yaml with env
       run: |
-        curl -L https://github.com/a8m/envsubst/releases/download/v1.2.0/envsubst-`uname -s`-`uname -m` -o envsubst && chmod +x ./envsubst
-        ./envsubst < config.yaml.tmpl > config.yaml
-        cat config.yaml
+        - sed -i "s#USERNAME#${DOCKERHUB_USERNAME}#g" config.yaml
+        - sed -i "s#PASSWORD#${DOCKERHUB_PASSWORD}#g" config.yaml
 
     - name: sync images
       run: |
