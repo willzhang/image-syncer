@@ -9,6 +9,8 @@ on:
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.0
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
 
 jobs:
   image-sync:
