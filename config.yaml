@@ -14,4 +14,7 @@ images:
   k8s.gcr.io/kube-apiserver: willdockerhub/kube-apiserver
   k8s.gcr.io/kube-controller-manager: willdockerhub/kube-controller-manager
   k8s.gcr.io/kube-scheduler: willdockerhub/kube-scheduler
+  k8s.gcr.io/kube-proxy: willdockerhub/kube-proxy
+  k8s.gcr.io/pause: willdockerhub/pause
   k8s.gcr.io/etcd: willdockerhub/etcd
+  coredns/coredns: willdockerhub/coredns
