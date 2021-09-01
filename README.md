@@ -43,7 +43,7 @@ images:
 
 ![githubaction02.png](https://i.loli.net/2021/08/21/OkXVWY8pN6Foat7.png)
 
-4、check your images, congratulations!
+4、after synced, check your images
 
 dockerhub
 
