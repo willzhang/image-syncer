@@ -11,3 +11,5 @@ images:
   k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner: willdockerhub/nfs-subdir-external-provisioner
   k8s.gcr.io/prometheus-adapter/prometheus-adapter: willdockerhub/prometheus-adapter
   k8s.gcr.io/etcd: willdockerhub/etcd
+  k8s.gcr.io/kube-apiserver: willdockerhub/kube-apiserver
+  k8s.gcr.io/kube-controller-manager: willdockerhub/kube-controller-manager
