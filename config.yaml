@@ -3,5 +3,5 @@ auth:
     username: USERNAME
     password: PASSWORD
 images:
-  quay.io/argoproj: willdockerhub/argoproj
-  ghcr.io/dexidp: willdockerhub/dexidp
+  quay.io/argoproj/argocd: willdockerhub/argocd
+  ghcr.io/dexidp/dex: willdockerhub/dex
