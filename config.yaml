@@ -18,3 +18,4 @@ images:
   k8s.gcr.io/pause: willdockerhub/pause
   k8s.gcr.io/etcd: willdockerhub/etcd
   coredns/coredns: willdockerhub/coredns
+  quay.io/argoproj: willdockerhub/argoproj
