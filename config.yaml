@@ -3,11 +3,7 @@ auth:
     username: USERNAME
     password: PASSWORD
 images:
-  k8s.gcr.io/sig-storage/csi-attacher: willdockerhub/csi-attacher
-  k8s.gcr.io/sig-storage/csi-provisioner: willdockerhub/csi-provisioner
-  k8s.gcr.io/sig-storage/csi-node-driver-registrar: willdockerhub/csi-node-driver-registrar
-  k8s.gcr.io/sig-storage/csi-resizer: willdockerhub/csi-resizer
-  k8s.gcr.io/sig-storage/csi-snapshotter: willdockerhub/csi-snapshotter
+  registry.cn-beijing.aliyuncs.com/kubesphereio/ks-jenkins:v3.2.0-2.249.1: willdockerhub/ks-jenkins:v3.2.0-2.249.1
   
   
   
