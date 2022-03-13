@@ -38,4 +38,4 @@ jobs:
       
     - name: sync images
       run: |
-        ./image-syncer --proc=20 --config=config.yaml --retries=1
+        ./image-syncer --proc=5 --config=config.yaml --retries=1
