@@ -2,7 +2,7 @@ auth:
   registry.hub.docker.com:
     username: DOCKERHUB_USERNAME
     password: DOCKERHUB_PASSWORD
-  registry.cn-beijing.aliyuncs.com:
+  registry.cn-shenzhen.aliyuncs.com:
     username: ALIYUN_USERNAME
     password: ALIYUN_PASSWORD
 images:
