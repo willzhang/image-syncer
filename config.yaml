@@ -6,13 +6,13 @@ auth:
     username: ALIYUN_USERNAME
     password: ALIYUN_PASSWORD
 images:
-  k8s.gcr.io/sig-storage/csi-attacher: registry.cn-shenzhen.aliyuncs.com/images_mirror/csi-attacher
-  k8s.gcr.io/sig-storage/csi-node-driver-registrar: registry.cn-shenzhen.aliyuncs.com/images_mirror/csi-node-driver-registrar
-  k8s.gcr.io/sig-storage/csi-provisioner: registry.cn-shenzhen.aliyuncs.com/images_mirror/csi-provisioner
-  k8s.gcr.io/sig-storage/csi-resizer:v1.4.0: registry.cn-shenzhen.aliyuncs.com/images_mirror/csi-resizer
-  k8s.gcr.io/sig-storage/csi-snapshotter:v5.0.1: registry.cn-shenzhen.aliyuncs.com/images_mirror/csi-snapshotter
-  quay.io/ceph/ceph: registry.cn-shenzhen.aliyuncs.com/images_mirror/ceph
-  quay.io/cephcsi/cephcsi: registry.cn-shenzhen.aliyuncs.com/images_mirror/cephcsi
-  quay.io/csiaddons/k8s-sidecar: registry.cn-shenzhen.aliyuncs.com/images_mirror/k8s-sidecar
-  quay.io/csiaddons/volumereplication-operator: registry.cn-shenzhen.aliyuncs.com/images_mirror/volumereplication-operator
-  rook/ceph:v1.8.6: registry.cn-shenzhen.aliyuncs.com/images_mirror/rook.ceph
+  k8s.gcr.io/sig-storage/csi-attacher: willdockerhub/csi-attacher
+  k8s.gcr.io/sig-storage/csi-node-driver-registrar: willdockerhub/csi-node-driver-registrar
+  k8s.gcr.io/sig-storage/csi-provisioner: willdockerhub/csi-provisioner
+  k8s.gcr.io/sig-storage/csi-resizer:v1.4.0: willdockerhub/csi-resizer
+  k8s.gcr.io/sig-storage/csi-snapshotter:v5.0.1: willdockerhub/csi-snapshotter
+  quay.io/ceph/ceph: willdockerhub/ceph
+  quay.io/cephcsi/cephcsi: willdockerhub/cephcsi
+  quay.io/csiaddons/k8s-sidecar: willdockerhub/k8s-sidecar
+  quay.io/csiaddons/volumereplication-operator: willdockerhub/volumereplication-operator
+  rook/ceph:v1.8.6: willdockerhub/rook.ceph
