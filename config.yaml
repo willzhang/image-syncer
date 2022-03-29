@@ -22,7 +22,7 @@ images:
   k8s.gcr.io/kube-state-metrics/kube-state-metrics: jiamiao442/kube-state-metrics
   k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner: jiamiao442/nfs-subdir-external-provisioner
   k8s.gcr.io/prometheus-adapter/prometheus-adapter: jiamiao442/prometheus-adapter
-  # kubernetes
+  # kubernetes 
   k8s.gcr.io/kube-apiserver: jiamiao442/kube-apiserver
   k8s.gcr.io/kube-controller-manager: jiamiao442/kube-controller-manager
   k8s.gcr.io/kube-scheduler: jiamiao442/kube-scheduler
