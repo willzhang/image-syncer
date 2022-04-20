@@ -3,30 +3,7 @@ auth:
     username: DOCKERHUB_USERNAME
     password: DOCKERHUB_PASSWORD
 images:
-  # rook
-  k8s.gcr.io/sig-storage/csi-attacher: willdockerhub/csi-attacher
-  k8s.gcr.io/sig-storage/csi-node-driver-registrar: willdockerhub/csi-node-driver-registrar
-  k8s.gcr.io/sig-storage/csi-provisioner: willdockerhub/csi-provisioner
-  k8s.gcr.io/sig-storage/csi-resizer:v1.4.0: willdockerhub/csi-resizer
-  k8s.gcr.io/sig-storage/csi-snapshotter:v5.0.1: willdockerhub/csi-snapshotter
-  quay.io/ceph/ceph: willdockerhub/ceph
-  quay.io/cephcsi/cephcsi: willdockerhub/cephcsi
-  quay.io/csiaddons/k8s-sidecar: willdockerhub/k8s-sidecar
-  quay.io/csiaddons/volumereplication-operator: willdockerhub/volumereplication-operator
-  rook/ceph:v1.8.6: willdockerhub/rook.ceph
-  # tools
-  k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
-  k8s.gcr.io/ingress-nginx/controller: willdockerhub/ingress-nginx-controller
-  k8s.gcr.io/git-sync/git-sync: willdockerhub/git-sync
-  gcr.io/kaniko-project/executor:debug,latest: willdockerhub/kaniko-executor
-  k8s.gcr.io/kube-state-metrics/kube-state-metrics: willdockerhub/kube-state-metrics
-  k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner: willdockerhub/nfs-subdir-external-provisioner
-  k8s.gcr.io/prometheus-adapter/prometheus-adapter: willdockerhub/prometheus-adapter
-  # kubernetes
-  k8s.gcr.io/kube-apiserver: willdockerhub/kube-apiserver
-  k8s.gcr.io/kube-controller-manager: willdockerhub/kube-controller-manager
-  k8s.gcr.io/kube-scheduler: willdockerhub/kube-scheduler
-  k8s.gcr.io/kube-proxy: willdockerhub/kube-proxy
-  k8s.gcr.io/pause: willdockerhub/pause
-  k8s.gcr.io/etcd: willdockerhub/etcd
-  coredns/coredns: willdockerhub/coredns
+  docker.io/neuvector/controller:5.0.0-b1
+  docker.io/neuvector/enforcer:5.0.0-b1
+  docker.io/neuvector/manager:5.0.0-b1
+  docker.io/neuvector/scanner:latest
