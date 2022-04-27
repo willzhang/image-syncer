@@ -3,4 +3,4 @@ auth:
     username: DOCKERHUB_USERNAME
     password: DOCKERHUB_PASSWORD
 images:
-  k8s.gcr.io/defaultbackend-amd64: jiamiao442/defaultbackend-amd64
+  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: jiamiao442/kube-webhook-certgen
