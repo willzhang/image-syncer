@@ -3,11 +3,11 @@
 name: image-sync
 on:
   push:
-    branches: [ main ]
+    branches: [ image-syncer-hub-to-aliyun ]
   pull_request:
-    branches: [ main ]
+    branches: [ image-syncer-hub-to-aliyun ]
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '0 23 * * 1'
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.0
