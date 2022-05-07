@@ -2,33 +2,14 @@ auth:
   registry.hub.docker.com:
     username: DOCKERHUB_USERNAME
     password: DOCKERHUB_PASSWORD
+  registry.cn-hangzhou.aliyuncs.com:
+    username: ALIYUN_USERNAME
+    password: ALIYUN_PASSWORD
+
+
 images:
-  # rook
-  k8s.gcr.io/sig-storage/csi-attacher: jiamiao442/csi-attacher
-  k8s.gcr.io/sig-storage/csi-node-driver-registrar: jiamiao442/csi-node-driver-registrar
-  k8s.gcr.io/sig-storage/csi-provisioner: jiamiao442/csi-provisioner
-  k8s.gcr.io/sig-storage/csi-resizer:v1.4.0: jiamiao442/csi-resizer
-  k8s.gcr.io/sig-storage/csi-snapshotter:v5.0.1: jiamiao442/csi-snapshotter
-  quay.io/ceph/ceph: jiamiao442/ceph
-  quay.io/cephcsi/cephcsi: jiamiao442/cephcsi
-  quay.io/csiaddons/k8s-sidecar: jiamiao442/k8s-sidecar
-  quay.io/csiaddons/volumereplication-operator: jiamiao442/volumereplication-operator
-  rook/ceph:v1.8.6: jiamiao442/rook.ceph
-  # tools
-  k8s.gcr.io/metrics-server/metrics-server: jiamiao442/metrics-server
-  k8s.gcr.io/ingress-nginx/controller: jiamiao442/ingress-nginx-controller
-  k8s.gcr.io/defaultbackend-amd64: jiamiao442/defaultbackend-amd64
-  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: jiamiao442/kube-webhook-certgen
-  k8s.gcr.io/git-sync/git-sync: jiamiao442/git-sync
-  gcr.io/kaniko-project/executor:debug,latest: jiamiao442/kaniko-executor
-  k8s.gcr.io/kube-state-metrics/kube-state-metrics: jiamiao442/kube-state-metrics
-  k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner: jiamiao442/nfs-subdir-external-provisioner
-  k8s.gcr.io/prometheus-adapter/prometheus-adapter: jiamiao442/prometheus-adapter
-  # kubernetes 
-  k8s.gcr.io/kube-apiserver: jiamiao442/kube-apiserver
-  k8s.gcr.io/kube-controller-manager: jiamiao442/kube-controller-manager
-  k8s.gcr.io/kube-scheduler: jiamiao442/kube-scheduler
-  k8s.gcr.io/kube-proxy: jiamiao442/kube-proxy
-  k8s.gcr.io/pause: jiamiao442/pause
-  k8s.gcr.io/etcd: jiamiao442/etcd
-  coredns/coredns: jiamiao442/coredns
+  # calico
+  docker.io/calico/cni:v3.22.2: mcalico/cni
+  docker.io/calico/kube-controllers:v3.22.2: mcalico/kube-controllers
+  docker.io/calico/node:v3.22.2: mcalico/node
+  docker.io/calico/pod2daemon-flexvol:v3.22.2: mcalico/pod2daemon-flexvol
