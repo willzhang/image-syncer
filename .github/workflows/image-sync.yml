@@ -6,8 +6,8 @@ on:
     branches: [ image-syncer-hub-to-aliyun ]
   pull_request:
     branches: [ image-syncer-hub-to-aliyun ]
-  schedule:
-    - cron: '0 23 * * 1'
+  #schedule:
+  #  - cron: '0 23 * * 1'   #  no schedule
 
 env:
   IMAGE_SYNCER_VERSION: v1.3.1
