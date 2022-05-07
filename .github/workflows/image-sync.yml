@@ -10,7 +10,7 @@ on:
     - cron: '0 23 * * 1'
 
 env:
-  IMAGE_SYNCER_VERSION: v1.3.0
+  IMAGE_SYNCER_VERSION: v1.3.1
   ALIYUN_USERNAME: ${{ secrets.ALIYUN_USERNAME }}
   ALIYUN_PASSWORD: ${{ secrets.ALIYUN_PASSWORD }}
   
@@ -34,4 +34,4 @@ jobs:
       
     - name: sync images
       run: |
-        ./image-syncer --proc=5 --config=config.yaml --namespace=mcalico   --registry=registry.cn-hangzhou.aliyuncs.com --retries=2
+        ./image-syncer --proc=5 --config=config.yaml  --retries=2

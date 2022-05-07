@@ -1,7 +1,4 @@
 auth:
-  registry.hub.docker.com:
-    username: DOCKERHUB_USERNAME
-    password: DOCKERHUB_PASSWORD
   registry.cn-hangzhou.aliyuncs.com:
     username: ALIYUN_USERNAME
     password: ALIYUN_PASSWORD
@@ -9,7 +6,7 @@ auth:
 
 images:
   # calico
-  docker.io/calico/cni:v3.22.2: mcalico/cni
-  docker.io/calico/kube-controllers:v3.22.2: mcalico/kube-controllers
-  docker.io/calico/node:v3.22.2: mcalico/node
-  docker.io/calico/pod2daemon-flexvol:v3.22.2: mcalico/pod2daemon-flexvol
+  docker.io/calico/cni:v3.22.2: registry.cn-hangzhou.aliyuncs.com/mcalico/cni
+  docker.io/calico/kube-controllers:v3.22.2: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-controllers
+  docker.io/calico/node:v3.22.2: registry.cn-hangzhou.aliyuncs.com/mcalico/node
+  docker.io/calico/pod2daemon-flexvol:v3.22.2: registry.cn-hangzhou.aliyuncs.com/mcalico/pod2daemon-flexvol
