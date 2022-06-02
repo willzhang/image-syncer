@@ -1,7 +1,7 @@
 auth:
-  registry.hub.docker.com:
-    username: DOCKERHUB_USERNAME
-    password: DOCKERHUB_PASSWORD
+  registry.cn-shenzhen.aliyuncs.com:
+    username: $USERNAME
+    password: $PASSWORD
 images:
   docker.io/neuvector/controller:5.0.0-b1
   docker.io/neuvector/enforcer:5.0.0-b1
