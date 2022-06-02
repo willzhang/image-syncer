@@ -3,7 +3,4 @@ auth:
     username: $USERNAME
     password: $PASSWORD
 images:
-  docker.io/neuvector/controller:5.0.0-b1
-  docker.io/neuvector/enforcer:5.0.0-b1
-  docker.io/neuvector/manager:5.0.0-b1
-  docker.io/neuvector/scanner:latest
+  quay.io/cephcsi/cephcsi: registry.cn-shenzhen.aliyuncs.com/cnmirror/csi-provisioner
