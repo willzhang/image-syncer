@@ -3,4 +3,4 @@ auth:
     username: $USERNAME
     password: $PASSWORD
 images:
-  quay.io/cephcsi/cephcsi: registry.cn-shenzhen.aliyuncs.com/cnmirror/csi-provisioner
+   k8s.gcr.io/metrics-server/metrics-server: willdockerhub/metrics-server
