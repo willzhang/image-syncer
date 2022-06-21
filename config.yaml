@@ -6,11 +6,11 @@ auth:
 
 images:
   # calico
-  docker.io/calico/cni: registry.cn-hangzhou.aliyuncs.com/mcalico/cni
-  docker.io/calico/kube-controllers: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-controllers
-  docker.io/calico/node: registry.cn-hangzhou.aliyuncs.com/mcalico/node
-  docker.io/calico/pod2daemon-flexvol: registry.cn-hangzhou.aliyuncs.com/mcalico/pod2daemon-flexvol
-  k8s.gcr.io/metrics-server/metrics-server: registry.cn-hangzhou.aliyuncs.com/mcalico/metrics-server
-  k8s.gcr.io/ingress-nginx/controller: registry.cn-hangzhou.aliyuncs.com/mcalico/ingress-nginx-controller
-  k8s.gcr.io/ingress-nginx/kube-webhook-certgen: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-webhook-certgen
-  k8s.gcr.io/defaultbackend-amd64: registry.cn-hangzhou.aliyuncs.com/mcalico/defaultbackend-amd64
+  docker.io/calico/cni:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/cni
+  docker.io/calico/kube-controllers:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-controllers
+  docker.io/calico/node:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/node
+  docker.io/calico/pod2daemon-flexvol:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/pod2daemon-flexvol
+  k8s.gcr.io/metrics-server/metrics-server:v0.6.1: registry.cn-hangzhou.aliyuncs.com/mcalico/metrics-server
+  k8s.gcr.io/ingress-nginx/controller:v1.2.0: registry.cn-hangzhou.aliyuncs.com/mcalico/ingress-nginx-controller
+  k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.1.1: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-webhook-certgen
+  k8s.gcr.io/defaultbackend-amd64:1.5: registry.cn-hangzhou.aliyuncs.com/mcalico/defaultbackend-amd64
