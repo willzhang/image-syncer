@@ -5,6 +5,7 @@ auth:
 
 
 images:
+  docker.io/sameersbn/postgresql:12-20200524: registry.cn-hangzhou.aliyuncs.com/mcalico/postgresql:12-20200524
   # calico
   docker.io/calico/cni:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/cni
   docker.io/calico/kube-controllers:v3.23.1: registry.cn-hangzhou.aliyuncs.com/mcalico/kube-controllers
