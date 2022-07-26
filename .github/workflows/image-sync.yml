@@ -3,9 +3,9 @@
 name: image-sync
 on:
   push:
-    branches: [ image-syncer-hub-to-aliyun ]
+    branches: [ image-syncer-hub-to-aliyun-tmp ]
   pull_request:
-    branches: [ image-syncer-hub-to-aliyun ]
+    branches: [ image-syncer-hub-to-aliyun-tmp ]
   #schedule:
   #  - cron: '0 23 * * 1'   #  no schedule
 
